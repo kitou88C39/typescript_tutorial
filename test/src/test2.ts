@@ -14,4 +14,12 @@ export const test = () => {
     Email: 'mike@gmail.com';
     isActive: true;
   }
+  const createAccount = (accountInfo: UserProps) => {};
+  createAccount({
+    useId: 1,
+    name: 'Mike',
+    age: 25,
+    Email: 'mike@gmail.com',
+    isActive: true,
+  });
 };
