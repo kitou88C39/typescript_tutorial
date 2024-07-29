@@ -15,7 +15,7 @@ export const test = () => {
     isActive: true;
   }
 
-  // interfaceを拡張する場合①
+  // interfaceを拡張する場合
   interface AdminUser extends UserProps {
     role: String;
   }
@@ -26,6 +26,10 @@ export const test = () => {
     age: 25;
     Email: 'mike@gmail.com';
     isActive: true;
+  };
+  // typeを拡張する場合
+  type AdminUserProps = UserProps & {
+    role: String;
   };
 
   const createAccount = (accountInfo: UserProps) => {};
