@@ -14,6 +14,12 @@ export const test = () => {
     Email: 'mike@gmail.com';
     isActive: true;
   }
+
+  // interfaceを拡張する場合
+  interface AdminUser extends UserProps {
+    role: String;
+  }
+
   const createAccount = (accountInfo: UserProps) => {};
   createAccount({
     useId: 1,
