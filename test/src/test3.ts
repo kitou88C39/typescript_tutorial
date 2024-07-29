@@ -29,7 +29,12 @@ export const test3 = () => {
     public getProfile(): string {
       return `Name: ${this.name}, Age: ${this.age}`;
     }
+    //staticメソッドはクラスレベルで共通の機能を提供するために使用され、インスタンスを生成することなく呼び出せる便利なメソッド
+    static sayHelloWorld(): void {
+      console.log('Hello World');
+    }
   }
   const user = new User(1, 'Mike', 25, 'mike@gmail.com', true);
-  user.getProfile();
+  user.getProfile(); //public
+  User.sayHelloWorld(); //static
 };
