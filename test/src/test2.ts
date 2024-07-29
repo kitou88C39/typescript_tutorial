@@ -1,4 +1,4 @@
-export const test = () => {
+export const test2 = () => {
   const user = {
     useId: 1,
     name: 'Mike',
