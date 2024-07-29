@@ -1,4 +1,4 @@
-export const test = () => {
+export const test1 = () => {
   const name: string = 'Mike'; //1. 文字列型 (string)
   const age: number = 25; //2. 数値型 (number)
   const isStudent: boolean = false; //3. ブール型 (boolean)
