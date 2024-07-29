@@ -13,7 +13,7 @@ export const test3 = () => {
       Email: string,
       isActive: boolean
     ) {
-      this.userId = userId; // Assign the value from the constructor parameter
+      this.userId = userId;
       this.name = name;
       this.age = age;
       this.Email = Email;
@@ -24,4 +24,5 @@ export const test3 = () => {
       return `Name: ${this.name}, Age: ${this.age}`;
     }
   }
+  const user = new User(1, 'Mike', 25, 'mike@gmail.com', true);
 };
