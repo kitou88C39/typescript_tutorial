@@ -10,4 +10,5 @@ export const test5 = () => {
   const foo = <T>(arg: T): T => {
     return arg;
   };
+  foo<string>('hello world');
 };
