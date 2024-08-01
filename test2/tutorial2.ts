@@ -1,4 +1,4 @@
-const concatenateValues = (a: string, b: string) => {
+const concatenateValues = (a: string, b: string): string => {
   return a + b;
 };
 
