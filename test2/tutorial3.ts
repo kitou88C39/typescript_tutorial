@@ -1,9 +1,11 @@
-interface UserInterface {}
+interface UserInterface {
+  id: number;
+  name: string;
+  age: number;
+}
 
 const User = {
   id: 2,
   name: 'Pedro',
-  age: 22,
+  age: '22',
 };
-
-User.age = '22';
