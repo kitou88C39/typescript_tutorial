@@ -20,6 +20,12 @@ function borrowedBooks(title) {
   const selectedBook = books.find(
     (book) => book.title == title && book.available
   );
+  //タイプガードを入れる
+  if (!selectedBook) {
+    console.error('貸し出しする本が見つかりませんでした');
+    return;
+  }
+
   selectedBook.available = false;
   const newBorrowedBook = {
     id: newBookId,
