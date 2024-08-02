@@ -29,3 +29,11 @@ function borrowedBooks(title) {
   borrowedBooks.push(newBorrowedBook);
   return selectedBook;
 }
+
+//返却もできるようにする
+function returnBool(bookId) {
+  const selectedBook = borrowedBooks.find((book) => book.id === bookId);
+  selectedBook.book.available = true;
+  selectedBook.status = 'returned';
+  return selectedBook;
+}
