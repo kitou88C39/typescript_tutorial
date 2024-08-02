@@ -31,7 +31,7 @@ function borrowedBooks(title) {
 }
 
 //借りた本の返却
-function returnBool(bookId) {
+function returnBook(bookId) {
   const selectedBook = borrowedBooks.find((book) => book.id === bookId);
   selectedBook.book.available = true;
   selectedBook.status = 'returned';
