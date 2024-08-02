@@ -21,4 +21,11 @@ function borrowedBooks(title) {
     (book) => book.title == title && book.available
   );
   selectedBook.available = false;
+  const newBorrowedBook = {
+    id: newBookId,
+    book: selectedBook,
+    status: 'borrowed',
+  };
+  borrowedBooks.push(newBorrowedBook);
+  return selectedBook;
 }
