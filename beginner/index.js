@@ -30,10 +30,16 @@ function borrowedBooks(title) {
   return selectedBook;
 }
 
-//返却もできるようにする
+//借りた本の返却
 function returnBool(bookId) {
   const selectedBook = borrowedBooks.find((book) => book.id === bookId);
   selectedBook.book.available = true;
   selectedBook.status = 'returned';
   return selectedBook;
 }
+
+//新しい本の追加
+addNewBook({ title: 'Vue入門', author: '伊藤花子', return: true });
+addNewBook({ title: 'Python入門', author: '鈴木花子', return: true });
+
+//本を借りる
