@@ -14,3 +14,11 @@ function addNewBook(book) {
   books.push(book);
   return book;
 }
+
+//借りたい本のタイトルを関数に渡すと貸してくれる
+function borrowedBooks(title) {
+  const selectedBook = books.find(
+    (book) => book.title == title && book.available
+  );
+  selectedBook.available = false;
+}
