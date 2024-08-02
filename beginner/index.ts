@@ -4,6 +4,12 @@ const books = [
   { title: 'JavaScript入門', author: '山田太郎', available: false },
   { title: 'React入門', author: '鈴木太郎', available: true },
 ];
+//TypeでBook型を作成する
+type book = {
+  title: string;
+  author: string;
+  available: boolean;
+};
 
 //借りた本をリストを保存
 const borrowedBooks = [];
@@ -20,7 +26,7 @@ function addNewBook(book: {
 }
 
 //借りたい本のタイトルを関数に渡すと貸してくれる
-function borrowedBooks(title) {
+function borrowedBooks(title: string) {
   const selectedBook = books.find(
     (book) => book.title == title && book.available
   );
