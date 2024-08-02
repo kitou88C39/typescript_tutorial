@@ -10,7 +10,11 @@ const borrowedBooks = [];
 let newBookId = 1;
 
 //本が入荷した時に書籍リストに追加
-function addNewBook(book) {
+function addNewBook(book: {
+  title: string;
+  author: string;
+  available: boolean;
+}) {
   books.push(book);
   return book;
 }
@@ -37,7 +41,7 @@ function borrowedBooks(title) {
 }
 
 //借りた本の返却
-function returnBool(bookId) {
+function returnBook(bookId: number) {
   const selectedBook = borrowedBooks.find((book) => book.id === bookId);
   selectedBook.book.available = true;
   selectedBook.status = 'returned';
@@ -50,7 +54,7 @@ addNewBook({ title: 'Python入門', author: '鈴木花子', return: true });
 
 //本を借りるてすぐに返却
 borrowedBooks('TypeScript入門');
-returnBook('1');
+returnBook(1);
 
 //console.log(books);
 //console.log(borrowedBooks);
