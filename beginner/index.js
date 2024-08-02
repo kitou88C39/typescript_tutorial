@@ -42,4 +42,6 @@ function returnBool(bookId) {
 addNewBook({ title: 'Vue入門', author: '伊藤花子', return: true });
 addNewBook({ title: 'Python入門', author: '鈴木花子', return: true });
 
-//本を借りる
+//本を借りるてすぐに返却
+borrowedBooks('TypeScript入門');
+returnBook('1');
