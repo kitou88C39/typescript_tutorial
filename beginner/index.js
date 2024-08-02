@@ -45,3 +45,6 @@ addNewBook({ title: 'Python入門', author: '鈴木花子', return: true });
 //本を借りるてすぐに返却
 borrowedBooks('TypeScript入門');
 returnBook('1');
+
+//console.log(books);
+//console.log(borrowedBooks);
