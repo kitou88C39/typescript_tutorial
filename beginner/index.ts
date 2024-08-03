@@ -11,6 +11,13 @@ type Book = {
   available: boolean;
 };
 
+//ネストオブジェクトをTypeで宣言
+type BorrowedBook = {
+  id: number;
+  book: Book;
+  state: string;
+};
+
 //借りた本をリストを保存
 const borrowedBooks = [];
 let newBookId = 1;
