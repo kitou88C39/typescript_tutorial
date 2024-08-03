@@ -63,6 +63,14 @@ function returnBook(bookId: number) {
   selectedBook.status = 'returned';
   return selectedBook;
 }
+//本のタイトル及びIDを受け取ったらその本を返す
+function getBookDetail(identifier: string | number){
+if (typeof identifier ==== "string"){
+
+}else{
+
+}
+}
 
 //新しい本の追加
 addNewBook({ id: 4, title: 'Vue入門', author: '伊藤花子', available: true });
