@@ -1,11 +1,12 @@
 //本の在庫
 const books = [
-  { title: 'TypeScript入門', author: '田中太郎', available: true },
-  { title: 'JavaScript入門', author: '山田太郎', available: false },
-  { title: 'React入門', author: '鈴木太郎', available: true },
+  { id: 1, title: 'TypeScript入門', author: '田中太郎', available: true },
+  { id: 2, title: 'JavaScript入門', author: '山田太郎', available: false },
+  { id: 3, title: 'React入門', author: '鈴木太郎', available: true },
 ];
 //TypeでBook型を作成する
 type Book = {
+  id: number;
   title: string;
   author: string;
   available: boolean;
@@ -15,7 +16,7 @@ type Book = {
 type BorrowedBook = {
   id: number;
   book: Book;
-  state: string;
+  state: 'borrowed' | 'return';
 };
 
 //借りた本をリストを保存
@@ -64,11 +65,11 @@ function returnBook(bookId: number) {
 }
 
 //新しい本の追加
-addNewBook({ title: 'Vue入門', author: '伊藤花子', available: true });
-addNewBook({ title: 'Python入門', author: '鈴木花子', available: true });
+addNewBook({ id: 4, title: 'Vue入門', author: '伊藤花子', available: true });
+addNewBook({ id: 5, title: 'Python入門', author: '鈴木花子', available: true });
 
 //本を借りるてすぐに返却
-borrowedBooks('TypeScript入門');
+borrowedBook('TypeScript入門');
 returnBook(1);
 
 //console.log(books);
