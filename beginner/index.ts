@@ -19,7 +19,7 @@ type BorrowedBook = {
 };
 
 //借りた本をリストを保存
-const borrowedBooks = [];
+const borrowedBooks: BorrowedBook[] = [];
 let newBookId = 1;
 
 //本が入荷した時に書籍リストに追加
@@ -29,7 +29,7 @@ function addNewBook(book: Book) {
 }
 
 //借りたい本のタイトルを関数に渡すと貸してくれる
-function borrowedBooks(title: string) {
+function borrowedBook(title: string) {
   const selectedBook = books.find(
     (book) => book.title == title && book.available
   );
