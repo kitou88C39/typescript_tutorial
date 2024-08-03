@@ -52,6 +52,12 @@ function borrowedBook(title: string) {
 //借りた本の返却
 function returnBook(bookId: number) {
   const selectedBook = borrowedBooks.find((book) => book.id === bookId);
+  //タイプガードを入れる
+  if (!selectedBook) {
+    console.error('返却する本が見つかりませんでした');
+    return;
+  }
+
   selectedBook.book.available = true;
   selectedBook.status = 'returned';
   return selectedBook;
