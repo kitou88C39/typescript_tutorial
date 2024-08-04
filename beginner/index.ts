@@ -7,13 +7,6 @@ const books = [
   { id: 2, title: 'JavaScript入門', author: '山田太郎', available: false },
   { id: 3, title: 'React入門', author: '鈴木太郎', available: true },
 ];
-//TypeでBook型を作成する
-// type Book = {
-//   id: number;
-//   title: string;
-//   author: string;
-//   available: boolean;
-// };
 
 //ネストオブジェクトをTypeで宣言
 type BorrowedBook = {
@@ -65,14 +58,6 @@ function returnBook(bookId: number) {
   selectedBook.status = 'returned';
   return selectedBook;
 }
-//本のタイトル及びIDを受け取ったらその本を返す
-// function getBookDetail(identifier: string | number) {
-//   if (typeof identifier === 'string') {
-//     return books.find((book) => book.title === identifier);
-//   } else {
-//     return books.find((book) => book.id === identifier);
-//   }
-// }
 
 //新しい本の追加
 addNewBook({ id: 4, title: 'Vue入門', author: '伊藤花子', available: true });
