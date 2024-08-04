@@ -82,7 +82,7 @@ addNewBook({ id: 5, title: 'Python入門', author: '鈴木花子', available: tr
 //本を借りるてすぐに返却
 borrowedBook('TypeScript入門');
 returnBook(1);
-getBookDetail('TypeScript入門');
+getBookDetail('TypeScript入門', books);
 
 console.log(books);
 console.log(borrowedBooks);
