@@ -16,7 +16,7 @@ type Book = {
 type BorrowedBook = {
   id: number;
   book: Book;
-  state: 'borrowed' | 'return';
+  status: 'borrowed' | 'returned';
 };
 
 //借りた本をリストを保存
@@ -41,8 +41,8 @@ function borrowedBook(title: string) {
   }
 
   selectedBook.available = false;
-  const newBorrowedBook = {
-    id: newBookId,
+  const newBorrowedBook: BorrowedBook = {
+    id: newBookId++,
     book: selectedBook,
     status: 'borrowed',
   };
