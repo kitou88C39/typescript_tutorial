@@ -7,12 +7,12 @@ const books = [
   { id: 3, title: 'React入門', author: '鈴木太郎', available: true },
 ];
 //TypeでBook型を作成する
-type Book = {
-  id: number;
-  title: string;
-  author: string;
-  available: boolean;
-};
+// type Book = {
+//   id: number;
+//   title: string;
+//   author: string;
+//   available: boolean;
+// };
 
 //ネストオブジェクトをTypeで宣言
 type BorrowedBook = {
