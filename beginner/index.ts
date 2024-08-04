@@ -19,8 +19,12 @@ type BorrowedBook = {
 const borrowedBooks: BorrowedBook[] = [];
 let newBookId = 1;
 
-//本が入荷した時に書籍リストに追加
-function addNewBook(book: Book): void {
+//本が入荷した時に書籍リストに追加　　　Omitを使う
+function addNewBook(book: OmitBook<Book, 'id'>): void {
+  const newBook = {
+    id: newBookId++,
+    ...book,
+  };
   books.push(book);
 }
 
