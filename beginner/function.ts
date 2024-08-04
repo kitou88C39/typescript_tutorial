@@ -3,4 +3,10 @@ import { Book } from './book';
 export function getBookDetail(
   identifier: string | number,
   books: Book[]
-): Book {}
+): Book {
+    const book = typeof identifier === "number"? books.find(book => book.id === identifier):books.find(book => book.title === identifier):
+    if(!book){
+    throw new Error("本が見つかりませんでした")
+    }
+    
+}
