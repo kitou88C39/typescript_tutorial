@@ -1,4 +1,5 @@
 import { getBookDetail } from './function';
+import { Book } from './book';
 
 //本の在庫
 const books = [
