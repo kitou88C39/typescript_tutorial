@@ -1,5 +1,5 @@
 //TypeでBook型を作成する
-type Book = {
+export type Book = {
   id: number;
   title: string;
   author: string;
