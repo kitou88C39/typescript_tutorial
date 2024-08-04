@@ -20,12 +20,12 @@ const borrowedBooks: BorrowedBook[] = [];
 let newBookId = 1;
 
 //本が入荷した時に書籍リストに追加　　　Omitを使う
-function addNewBook(book: OmitBook<Book, 'id'>): void {
+function addNewBook(book: Omit<Book, 'id'>): void {
   const newBook = {
     id: newBookId++,
     ...book,
   };
-  books.push(book);
+  books.push(newBook);
 }
 
 //借りたい本のタイトルを関数に渡すと貸してくれる
@@ -64,8 +64,8 @@ function returnBook(bookId: number) {
 }
 
 //新しい本の追加
-addNewBook({ id: 4, title: 'Vue入門', author: '伊藤花子', available: true });
-addNewBook({ id: 5, title: 'Python入門', author: '鈴木花子', available: true });
+addNewBook({ title: 'Vue入門', author: '伊藤花子', available: true });
+addNewBook({ title: 'Python入門', author: '鈴木花子', available: true });
 
 //本を借りるてすぐに返却
 borrowedBook('TypeScript入門');
