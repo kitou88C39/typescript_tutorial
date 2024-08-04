@@ -1,5 +1,5 @@
 //本のタイトル及びIDを受け取ったらその本を返す
-function getBookDetail(identifier: string | number) {
+export function getBookDetail(identifier: string | number, books: Book[]) {
   if (typeof identifier === 'string') {
     return books.find((book) => book.title === identifier);
   } else {

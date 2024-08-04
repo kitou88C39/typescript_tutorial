@@ -1,3 +1,5 @@
+import { getBookDetail } from './function';
+
 //本の在庫
 const books = [
   { id: 1, title: 'TypeScript入門', author: '田中太郎', available: true },
@@ -79,6 +81,7 @@ addNewBook({ id: 5, title: 'Python入門', author: '鈴木花子', available: tr
 //本を借りるてすぐに返却
 borrowedBook('TypeScript入門');
 returnBook(1);
+getBookDetail('TypeScript入門');
 
-//console.log(books);
-//console.log(borrowedBooks);
+console.log(books);
+console.log(borrowedBooks);
