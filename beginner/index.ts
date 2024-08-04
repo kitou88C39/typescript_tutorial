@@ -19,13 +19,18 @@ type BorrowedBook = {
 const borrowedBooks: BorrowedBook[] = [];
 let newBookId = 1;
 
-//本が入荷した時に書籍リストに追加　　　Omitを使う
-function addNewBook(book: Omit<Book, 'id'>): void {
-  const newBook = {
-    id: newBookId++,
-    ...book,
-  };
-  books.push(newBook);
+//本が入荷した時に書籍リストに追加　　　Omit <T, Keys>を使う
+// function addNewBook(book: Omit<Book, 'id'>): void {
+//   const newBook = {
+//     id: newBookId++,
+//     ...book,
+//   };
+//   books.push(newBook);
+// }
+//本が入荷した時に書籍リストに追加 ジェネリクス型
+function addArray<T>(array: T[], item: T) {
+  array.push(item);
+  return array;
 }
 
 //借りたい本のタイトルを関数に渡すと貸してくれる
