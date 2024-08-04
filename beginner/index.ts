@@ -69,8 +69,15 @@ function returnBook(bookId: number) {
 }
 
 //新しい本の追加
-addNewBook({ title: 'Vue入門', author: '伊藤花子', available: true });
-addNewBook({ title: 'Python入門', author: '鈴木花子', available: true });
+//addNewBook({ title: 'Vue入門', author: '伊藤花子', available: true });
+//addNewBook({ title: 'Python入門', author: '鈴木花子', available: true });
+
+addArray<Book>(books, {
+  id: newBookId++,
+  title: 'Python入門',
+  author: '鈴木花子',
+  available: true,
+});
 
 //本を借りるてすぐに返却
 borrowedBook('TypeScript入門');
