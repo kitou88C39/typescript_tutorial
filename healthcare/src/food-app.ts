@@ -9,6 +9,8 @@ class Food {
 }
 class Foods {
   elements = document.querySelectorAll<HTMLDivElement>('.food');
+  private _activeElements: HTMLDivElement[] = [];
+  get activeElements() {}
   constructor() {
     this.elements.forEach((element) => {
       new Food(element);
