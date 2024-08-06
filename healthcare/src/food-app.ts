@@ -1,11 +1,15 @@
 class Score {}
 class Food {
-  constructor(public element: HTMLDivElement) {}
+  constructor(public element: HTMLDivElement) {
+    element.addEventListener('click');
+  }
 }
 class Foods {
   elements = document.querySelectorAll<HTMLDivElement>('.food');
   constructor() {
-    this.elements.forEach((elements) => {});
+    this.elements.forEach((elements) => {
+      new Foods(element);
+    });
   }
 }
 const foods = new Foods();
