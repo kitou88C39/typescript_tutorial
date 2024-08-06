@@ -10,8 +10,8 @@ class Food {
 class Foods {
   elements = document.querySelectorAll<HTMLDivElement>('.food');
   constructor() {
-    this.elements.forEach((elements) => {
-      new Foods(element);
+    this.elements.forEach((element) => {
+      new Food(element);
     });
   }
 }
