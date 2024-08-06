@@ -3,7 +3,9 @@ class Food {
   constructor(public element: HTMLDivElement) {
     element.addEventListener('click', this.clickEventHandler);
   }
-  clickEventHandler() {}
+  clickEventHandler() {
+    this.element.classList.toggle('food--active');
+  }
 }
 class Foods {
   elements = document.querySelectorAll<HTMLDivElement>('.food');
