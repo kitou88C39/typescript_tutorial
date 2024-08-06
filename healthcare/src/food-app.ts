@@ -1,5 +1,7 @@
 class Score {}
-class Food {}
+class Food {
+  constructor(public element: HTMLDivElement) {}
+}
 class Foods {
   elements = document.querySelectorAll<HTMLDivElement>('.food');
   constructor() {
