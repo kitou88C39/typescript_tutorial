@@ -22,7 +22,9 @@ class Foods {
   }
   get activeElementsScore() {
     this._activeElements = [];
-    this.activeElements.forEach((element) => {});
+    this.activeElements.forEach((element) => {
+      const foodScore = element.querySelector('.food__score');
+    });
   }
   constructor() {
     this.elements.forEach((element) => {
