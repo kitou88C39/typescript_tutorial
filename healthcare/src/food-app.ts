@@ -11,11 +11,13 @@ class Foods {
   elements = document.querySelectorAll<HTMLDivElement>('.food');
   private _activeElements: HTMLDivElement[] = [];
   get activeElements() {
+    this._activeElements = [];
     this.elements.forEach((element) => {
       if (element.classList.contains('food--active')) {
         this._activeElements.push(element);
       }
     });
+    return this._activeElements;
   }
   constructor() {
     this.elements.forEach((element) => {
