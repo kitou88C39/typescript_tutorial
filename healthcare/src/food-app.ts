@@ -24,6 +24,9 @@ class Foods {
     this._activeElements = [];
     this.activeElements.forEach((element) => {
       const foodScore = element.querySelector('.food__score');
+      if (foodScore) {
+        this._activeElementsScore.push(Number(foodScore.textContent));
+      }
     });
   }
   constructor() {
