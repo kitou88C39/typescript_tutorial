@@ -20,7 +20,13 @@ class Foods {
     });
     return this._activeElements;
   }
-  get activeElementsScore() {}
+  get activeElementsScore() {
+    this._activeElements = [];
+    this.elements.forEach(element) => {
+      if (element.classList.contains('food--active')) {
+        this._activeElements.push(element);
+      }
+  }
   constructor() {
     this.elements.forEach((element) => {
       new Food(element);
