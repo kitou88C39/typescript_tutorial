@@ -20,7 +20,7 @@ class Foods {
     });
     return this._activeElements;
   }
-  get activeElementsScore() {
+  get activeElementsScore(): number[] {
     this._activeElements = [];
     this.activeElements.forEach((element) => {
       const foodScore = element.querySelector('.food__score');
@@ -28,6 +28,7 @@ class Foods {
         this._activeElementsScore.push(Number(foodScore.textContent));
       }
     });
+    return this.activeElementsScore;
   }
   constructor() {
     this.elements.forEach((element) => {
