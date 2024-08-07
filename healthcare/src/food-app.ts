@@ -1,6 +1,7 @@
 class Score {
   get totalScore() {
     const foods = new Foods();
+    return foods.activeElementsScore.reduce((total, score) => total + score, 0);
   }
 }
 class Food {
