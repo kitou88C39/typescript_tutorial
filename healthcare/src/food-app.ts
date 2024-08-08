@@ -15,6 +15,8 @@ class Food {
   }
   clickEventHandler() {
     this.element.classList.toggle('food--active');
+    const score = new Score();
+    score.render();
   }
 }
 class Foods {
