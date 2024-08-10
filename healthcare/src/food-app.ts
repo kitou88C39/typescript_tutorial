@@ -10,9 +10,11 @@ class Score {
     );
   }
   private constructor() {}
-  static getInstance() {}
-  if(!Foods.instance){
-    Foods.instance = new Foods();
+  static getInstance() {
+    if (!Score.instance) {
+      Score.instance = new Score();
+    }
+    return Score.instance;
   }
 }
 class Food {
