@@ -1,4 +1,9 @@
-class Score {
+interface Scoreable {
+  readonly totalScore: number;
+  render(): void;
+}
+
+class Score implements Scoreable {
   private static instance: Score;
   get totalScore() {
     const foods = Foods.getInstance();
@@ -23,7 +28,7 @@ class Food {
   }
   clickEventHandler() {
     this.element.classList.toggle('food--active');
-    const score = new Score();
+    const score = Score.getInstance();
     score.render();
   }
 }
