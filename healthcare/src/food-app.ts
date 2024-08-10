@@ -20,6 +20,7 @@ class Food {
   }
 }
 class Foods {
+  private static instance: Foods;
   elements = document.querySelectorAll<HTMLDivElement>('.food');
   private _activeElements: HTMLDivElement[] = [];
   private _activeElementsScore: number[] = [];
@@ -42,7 +43,7 @@ class Foods {
     });
     return this.activeElementsScore;
   }
-  constructor() {
+  private constructor() {
     this.elements.forEach((element) => {
       new Food(element);
     });
