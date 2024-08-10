@@ -3,9 +3,9 @@ interface Scoreable {
   render(): void;
 }
 
-interface Scoreable {
-  readonly totalScore: number;
-  render(): void;
+interface Foodable {
+  element: HTMLDivElement;
+  clickEventHandler(): void;
 }
 
 class Score implements Scoreable {
@@ -27,7 +27,7 @@ class Score implements Scoreable {
     return Score.instance;
   }
 }
-class Food {
+class Food implements Foodable {
   constructor(public element: HTMLDivElement) {
     element.addEventListener('click', this.clickEventHandler.bind(this));
   }
