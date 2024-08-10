@@ -3,6 +3,11 @@ interface Scoreable {
   render(): void;
 }
 
+interface Scoreable {
+  readonly totalScore: number;
+  render(): void;
+}
+
 class Score implements Scoreable {
   private static instance: Score;
   get totalScore() {
