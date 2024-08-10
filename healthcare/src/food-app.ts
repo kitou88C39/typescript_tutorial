@@ -48,5 +48,10 @@ class Foods {
       new Food(element);
     });
   }
+  static getInstance() {
+    if (!Foods.instance) {
+      Foods.instance = new Foods();
+    }
+  }
 }
 const foods = new Foods();
