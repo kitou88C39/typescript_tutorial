@@ -5,7 +5,7 @@ const server = require('socket.io').ceateServer(app);
 const io = require('socket.io')(server);
 
 users = [];
-connection = [];
+connections = [];
 server.listen(3000);
 app.get('/', function (req, resp) {
   resp.sendFile(__dirname + '/index.html');
@@ -18,12 +18,9 @@ io.sockets.on('connection', function (socket) {
     console.log('Disconnected: %s socket connected', connections.length);
   });
 
-  // メッセージ送信時の処理
-  socket.on('send message', (data) => {
-    // メッセージを受信したユーザーに送信
-    io.emit('new message', {
-      username: socket.username,
-      message: data,
+  socket.on('send message', function (data) {
+      console.log(data);
+      io.sockets.emit("message: data", {msg:data}),
     });
-  });
 });
+
