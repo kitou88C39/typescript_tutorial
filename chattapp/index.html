@@ -48,7 +48,7 @@ $(function(){
   const $chat=$("#chat");
 
   socket.on('message', function(data) {
-        $('#chat-messages').append(`<p><strong>${data.msg}</strong></p>`);
+        $chat.append(`<div class="well">`+data.msg+`</div>`);
       });
 
       
