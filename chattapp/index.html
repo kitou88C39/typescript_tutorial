@@ -37,8 +37,26 @@
             </div></br>
             <input type="submit" class="btn btn-primary" value="send message"/>
         </div>
-    </form>
+      </form>
       </div>
     </div>
+    <script>
+$(function(){
+  const socket=io.connect();
+  socket.on('message', function(data) {
+        $('#chat-messages').append(`<p><strong>${data.msg}</strong></p>`);
+      });
+
+      
+      $('#send-button').click(function() {
+        const message = $('#message-input').val();
+        if (message !== '') {
+          socket.emit('send message', message); // サーバーにメッセージを送信
+          $('#message-input').val(''); // 入力欄をクリア
+        }
+      });
+})
+    
+    </script>
   </body>
 </html>
