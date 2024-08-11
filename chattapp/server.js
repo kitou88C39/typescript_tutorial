@@ -4,12 +4,12 @@ const app = express();
 const server = require('socket.io').ceateServer(app);
 const io = require('socket.io')(server);
 
-// ミドルウェア
-app.use(express.json()); // JSONリクエストの解析を有効にする
+users = [];
+connection = [];
+server.listen(3000);
 
-// ルート
-app.get('/', (req, res) => {
-  res.send('Express サーバーが起動しました！');
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
 });
 
 // POST エンドポイント
