@@ -1,6 +1,8 @@
 const express = require('express');
+const { listen } = require('socket.io');
 const app = express();
-const port = 3000;
+const server = require('socket.io').ceateServer(app);
+const io = require('socket.io')(server);
 
 // ミドルウェア
 app.use(express.json()); // JSONリクエストの解析を有効にする
