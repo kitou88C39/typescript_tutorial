@@ -49,12 +49,15 @@ $(function(){
 
   $messageForm.submit(function(e){
     e.preventDefault();
+    socket.emit("send message",$message.val());
+    $message.val("");
+    console.log("submitted")
   })
 
   socket.on('message', function(data) {
         $chat.append(`<div class="well">`+data.msg+`</div>`);
       });
-      });
+    });
     </script>
   </body>
 </html>
