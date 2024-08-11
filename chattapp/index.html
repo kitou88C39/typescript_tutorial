@@ -43,19 +43,16 @@
     <script>
 $(function(){
   const socket=io.connect();
+
+
+
   socket.on('message', function(data) {
         $('#chat-messages').append(`<p><strong>${data.msg}</strong></p>`);
       });
 
       
-      $('#send-button').click(function() {
-        const message = $('#message-input').val();
-        if (message !== '') {
-          socket.emit('send message', message); // サーバーにメッセージを送信
-          $('#message-input').val(''); // 入力欄をクリア
-        }
       });
-})
+
     
     </script>
   </body>
