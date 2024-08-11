@@ -3,7 +3,6 @@ const { listen } = require('socket.io');
 const app = express();
 const server = require('socket.io').ceateServer(app);
 const io = require('socket.io')(server);
-
 users = [];
 connections = [];
 server.listen(3000);
@@ -18,9 +17,10 @@ io.sockets.on('connection', function (socket) {
     console.log('Disconnected: %s socket connected', connections.length);
   });
 
-  socket.on('send message', function (data) {
-      console.log(data);
-      io.sockets.emit("message: data", {msg:data}),
-    });
+  socket.on('send message', (data) => {
+    console.log(data);
+    io.emit('message', { msg: data });
+  });
 });
 
+console.log('server is listening');
