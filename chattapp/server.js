@@ -11,12 +11,9 @@ app.get('/', function (req, resp) {
   resp.sendFile(__dirname + '/index.html');
 });
 io.sockets.on('connection', function (socket) {
-  console.log('新しい接続:', socket.id);
-
-  // 新しい接続を追加
   connections.push(socket);
+  console.log('connected: %s socket connected', connections.length);
 
-  // ユーザーが名前を送信した時の処理
   socket.on('new user', (data) => {
     // 同じ名前のユーザーがいないか確認
     if (users.indexOf(data) > -1) {
