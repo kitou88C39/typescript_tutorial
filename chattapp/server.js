@@ -10,8 +10,3 @@ server.listen(3000);
 app.get('/', function (req, resp) {
   resp.sendFile(__dirname + '/index.html');
 });
-
-// サーバーの起動
-app.listen(port, () => {
-  console.log(`サーバーがポート ${port} で稼働しています`);
-});
