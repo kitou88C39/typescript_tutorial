@@ -43,8 +43,9 @@
     <script>
 $(function(){
   const socket=io.connect();
-
-
+  const $messageForm=$("#messageForm");
+  const $message=$("#message");
+  const $chat=$("#chat");
 
   socket.on('message', function(data) {
         $('#chat-messages').append(`<p><strong>${data.msg}</strong></p>`);
@@ -52,8 +53,6 @@ $(function(){
 
       
       });
-
-    
     </script>
   </body>
 </html>
