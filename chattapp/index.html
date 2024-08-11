@@ -47,11 +47,13 @@ $(function(){
   const $message=$("#message");
   const $chat=$("#chat");
 
+  $messageForm.submit(function(e){
+    e.preventDefault();
+  })
+
   socket.on('message', function(data) {
         $chat.append(`<div class="well">`+data.msg+`</div>`);
       });
-
-      
       });
     </script>
   </body>
