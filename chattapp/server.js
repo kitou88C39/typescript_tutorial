@@ -13,10 +13,9 @@ app.get('/', function (req, resp) {
 io.sockets.on('connection', function (socket) {
   connections.push(socket);
   console.log('connected: %s socket connected', connections.length);
-  socket.on('disconnect', function(data) {
-    
-    
-    }
+  socket.on('disconnect', function (data) {
+    connections.splice(connections.indexOf(socket), 1);
+    console.log('Disconnected: %s socket connected', connections.length);
   });
 
   // メッセージ送信時の処理
@@ -27,4 +26,4 @@ io.sockets.on('connection', function (socket) {
       message: data,
     });
   });
-
+});
